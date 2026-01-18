@@ -11,40 +11,32 @@
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f7f7ff;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(180deg, #ffe4f3, #f6d9ff);
   overflow-x: hidden;
 }
 
 /* ===================== */
-/* 🌈 ABERTURA */
+/* 🌟 ABERTURA */
 /* ===================== */
 #splash {
   position: fixed;
   inset: 0;
-  background: linear-gradient(135deg, #3f51ff, #9c27ff, #ff5fa2);
+  background: radial-gradient(circle, #ff8fd8, #b76cff);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   z-index: 9999;
   animation: splashOut 1.5s ease forwards;
-  animation-delay: 3.5s;
+  animation-delay: 4s;
 }
 
-/* ⭐ LOGO */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  animation: logoFloat 2.5s infinite ease-in-out;
-}
-
-/* meia estrela */
-.star {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, #ffd54f, #ff8fd8);
+/* estrela */
+.star-logo {
+  width: 140px;
+  height: 140px;
+  background: linear-gradient(135deg, #fff1a8, #ff8fd8);
   clip-path: polygon(
     50% 0%,
     61% 35%,
@@ -52,28 +44,31 @@ body {
     68% 57%,
     79% 91%,
     50% 70%,
-    0% 70%,
-    0% 0%
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
   );
+  animation: starSpin 3s infinite ease-in-out;
 }
 
-/* texto logo */
-.logo-text {
-  font-size: 4rem;
+.logo-name {
+  margin-top: 25px;
+  font-size: 4.5rem;
   font-weight: bold;
-  background: linear-gradient(135deg, #ffffff, #e0c3ff);
+  letter-spacing: 4px;
+  background: linear-gradient(135deg, #ffffff, #ffd6f3);
   -webkit-background-clip: text;
   color: transparent;
+  animation: floatText 2.5s infinite ease-in-out;
 }
 
 /* ===================== */
-/* 🌈 HERO */
+/* 🌟 HERO */
 /* ===================== */
 .hero {
   height: 100vh;
-  background: linear-gradient(135deg, #3f51ff, #9c27ff, #ff5fa2);
-  background-size: 400% 400%;
-  animation: gradientMove 8s ease infinite;
+  background: linear-gradient(135deg, #ff8fd8, #b76cff);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -81,157 +76,41 @@ body {
   color: white;
   text-align: center;
   padding: 20px;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero h1 {
-  font-size: 5.5rem;
-  margin: 0;
-  animation: fadeUp 1.5s ease;
+  font-size: 5rem;
+  animation: floatText 3s infinite ease-in-out;
 }
 
 .hero p {
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   max-width: 700px;
 }
 
-/* ===================== */
-/* 📄 CONTEÚDO */
-/* ===================== */
-section {
-  padding: 80px 20px;
+/* bolhas e estrelas */
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.4;
+  animation: bubbleFloat 10s infinite ease-in-out;
 }
 
-.card {
-  background: white;
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 45px;
-  border-radius: 30px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-  animation: fadeUp 1.2s ease;
+.bubble.star {
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
 }
 
-h2 {
-  color: #6a5acd;
-  font-size: 3rem;
-  text-align: center;
-}
-
-p {
-  font-size: 1.4rem;
-  color: #444;
-  line-height: 1.7;
-  text-align: center;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  text-align: center;
-  font-size: 1.4rem;
-}
-
-ul li {
-  margin: 10px 0;
-}
-
-footer {
-  background: linear-gradient(135deg, #3f51ff, #ff5fa2);
-  color: white;
-  padding: 30px;
-  text-align: center;
-  font-size: 1.2rem;
-}
-
-/* ===================== */
-/* 🎬 ANIMAÇÕES */
-/* ===================== */
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes logoFloat {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
-}
-
-@keyframes splashOut {
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-</style>
-</head>
-
-<body>
-
-<!-- 🌈 ABERTURA -->
-<div id="splash">
-  <div class="logo">
-    <div class="star"></div>
-    <div class="logo-text">NEVELLY</div>
-  </div>
-</div>
-
-<!-- 🌈 HERO -->
-<div class="hero">
-  <h1>🌈 Mundo da Nevelly ✨</h1>
-  <p>um universo de cor, música, sonhos e alegria 💖</p>
-</div>
-
-<!-- 📄 CONTEÚDO -->
-<section>
-
-  <div class="card">
-    <h2>Quem é Nevelly</h2>
-    <p>
-      Nevelly é uma jovem criadora brasileira, nascida em
-      <strong>01 de março de 2010</strong>, com 15 anos,
-      moradora de São Paulo, apaixonada por criatividade,
-      cor e imaginação.
-    </p>
-  </div>
-
-  <div class="card">
-    <h2>Sonhos</h2>
-    <p>
-      Seu maior sonho é criar um programa infantil colorido,
-      alegre e musical, feito para encantar crianças.
-    </p>
-  </div>
-
-  <div class="card">
-    <h2>Redes Oficiais</h2>
-    <ul>
-      <li>@nevellyoficial</li>
-      <li>@soynevelly (conta reserva)</li>
-    </ul>
-    <p>
-      Também realiza colaborações com
-      <strong>Mylenna (@mylennaoficiall)</strong>.
-    </p>
-  </div>
-
-</section>
-
-<footer>
-  Equipe- Sérgio Rocha ⭐ 
-</footer>
-
-</body>
-</html>
+.b1 { width: 80px; height: 80px; background: #fff; top: 10%; left:
