@@ -1,228 +1,163 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Mundo da Nevelly</title>
+  <meta charset="UTF-8">
+  <title>Mundo da Nevelly</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family: Arial, Helvetica, sans-serif;
-}
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
 
-body{
-  background:#fff;
-  color:#000;
-  overflow-x:hidden;
-}
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #000;
+    }
 
-/* LOGO */
-.logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  justify-content:center;
-}
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #f7c6d9, #e3c6ff);
+      overflow: hidden;
+      position: relative;
+    }
 
-.logo svg{
-  width:45px;
-  height:45px;
-}
+    header h1 {
+      font-size: 3rem;
+      border: 3px solid #000;
+      padding: 20px 30px;
+      background: #fff;
+      animation: flutuar 3s ease-in-out infinite;
+    }
 
-/* ABERTURA */
-.hero{
-  position:relative;
-  height:100vh;
-  background:linear-gradient(90deg,#f7c6d9,#fff,#e6c9ff);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-  text-align:center;
-  overflow:hidden;
-}
+    @keyframes flutuar {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
 
-.hero h1{
-  font-size:38px;
-  animation: floatText 3s ease-in-out infinite alternate;
-}
+    nav {
+      background: #000;
+      padding: 15px;
+      text-align: center;
+    }
 
-.hero p{
-  margin-top:10px;
-  font-size:18px;
-}
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-@keyframes floatText{
-  from{transform:translateY(0);}
-  to{transform:translateY(-12px);}
-}
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      background: #fff;
+    }
 
-/* ESTRELAS RABISCO */
-.star{
-  position:absolute;
-  border:2px solid #000;
-  width:18px;
-  height:18px;
-  transform:rotate(45deg);
-  opacity:0.6;
-}
+    section h2 {
+      color: #b35cff;
+    }
 
-.star:before,
-.star:after{
-  content:"";
-  position:absolute;
-  width:18px;
-  height:18px;
-  border:2px solid #000;
-}
+    .foto {
+      text-align: center;
+    }
 
-.star:before{ transform:rotate(45deg); }
-.star:after{ transform:rotate(-45deg); }
+    .foto img {
+      max-width: 300px;
+      border-radius: 20px;
+      border: 4px solid #000;
+    }
 
-/* MENU */
-nav{
-  background:#000;
-  padding:15px;
-  display:flex;
-  justify-content:center;
-  gap:15px;
-  flex-wrap:wrap;
-}
-
-nav a{
-  text-decoration:none;
-  padding:8px 16px;
-  background:#f7c6d9;
-  color:#000;
-  border-radius:20px;
-  font-weight:bold;
-}
-
-/* SEÇÕES */
-section{
-  max-width:1000px;
-  margin:50px auto;
-  padding:40px;
-  background:#fff;
-  border-radius:30px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.15);
-}
-
-section h2{
-  color:#b07adf;
-  margin-bottom:20px;
-}
-
-section p{
-  line-height:1.8;
-  margin-bottom:10px;
-}
-
-/* FOTO */
-.foto{
-  width:260px;
-  border-radius:25px;
-  display:block;
-  margin:20px auto;
-  box-shadow:0 15px 30px rgba(0,0,0,0.3);
-}
-</style>
+    footer {
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- ABERTURA -->
-<div class="hero">
-  <div class="logo">
-    <!-- LOGO ESTRELA -->
-    <svg viewBox="0 0 100 100" fill="none" stroke="black" stroke-width="4">
-      <polygon points="50,5 61,39 95,39 67,59 78,95 50,74 22,95 33,59 5,39 39,39"/>
-    </svg>
-    <strong>nevelly</strong>
-  </div>
+  <!-- ABERTURA -->
+  <header>
+    <h1>Bem-vindo(a) ao Mundo da Nevelly</h1>
+  </header>
 
-  <h1>bem-vindo(a) ao mundo da nevelly</h1>
-  <p>um espaço organizado, criativo e autêntico</p>
+  <!-- MENU -->
+  <nav>
+    <a href="#quem">Quem é Nevelly</a>
+    <a href="#familia">Família</a>
+    <a href="#colabs">Colaborações</a>
+    <a href="#redes">Redes Sociais</a>
+  </nav>
 
-  <div class="star" style="top:15%;left:10%;"></div>
-  <div class="star" style="top:30%;right:15%;"></div>
-  <div class="star" style="bottom:20%;left:25%;"></div>
-</div>
+  <!-- QUEM É -->
+  <section id="quem">
+    <h2>Quem é Nevelly</h2>
 
-<!-- MENU -->
-<nav>
-  <a href="#quem">quem é nevelly</a>
-  <a href="#familia">família</a>
-  <a href="#cores">cores</a>
-  <a href="#colab">colaborações</a>
-  <a href="#instagram">instagram</a>
-  <a href="#fas">fã-clubes</a>
-</nav>
+    <div class="foto">
+      <img src="nevelly.jpg" alt="Foto da Nevelly">
+    </div>
 
-<!-- QUEM É -->
-<section id="quem">
-  <h2>quem é nevelly</h2>
-  <img src="imagens/quem-e-nevelly/nevelly.png" class="foto" alt="Nevelly">
+    <p><strong>Nome artístico:</strong> Nevelly Oficial</p>
+    <p><strong>Data de nascimento:</strong> 01 de março de 2010</p>
+    <p><strong>Idade:</strong> 15 anos (nascida em 2010)</p>
+    <p><strong>Cidade:</strong> São Paulo – SP</p>
+    <p><strong>Cores favoritas:</strong> azul, rosa e roxo</p>
 
-  <p><strong>nome artístico:</strong> nevelly oficial</p>
-  <p><strong>data de nascimento:</strong> 01/03/2010</p>
-  <p><strong>idade:</strong> 15 anos</p>
-  <p><strong>cidade:</strong> são paulo – sp</p>
-</section>
+    <p>
+      Nevelly é criadora de conteúdo digital e produz principalmente
+      conteúdos de dança, sempre com criatividade, estilo próprio
+      e muita dedicação.
+    </p>
+  </section>
 
-<!-- FAMÍLIA -->
-<section id="familia">
-  <h2>família</h2>
-  <p>
-    nevelly faz parte de uma família com cinco irmãos.
-    ela é a filha do meio e valoriza profundamente seus laços familiares.
-  </p>
-</section>
+  <!-- FAMÍLIA -->
+  <section id="familia">
+    <h2>Família</h2>
+    <p>
+      Nevelly faz parte de uma família com cinco irmãos.
+      Ela é a filha do meio.
+    </p>
+  </section>
 
-<!-- CORES -->
-<section id="cores">
-  <h2>cores favoritas</h2>
-  <p>
-    azul, rosa e roxo fazem parte da identidade e do estilo da nevelly,
-    refletindo delicadeza, criatividade e presença.
-  </p>
-</section>
+  <!-- COLABORAÇÕES -->
+  <section id="colabs">
+    <h2>Amizade e Colaborações</h2>
+    <p>
+      Nevelly cria conteúdos de dança junto com sua amiga
+      <strong>Mylenna Oliveira</strong>.
+    </p>
+    <p>
+      As duas realizam colaborações frequentes em vídeos,
+      unindo criatividade, dança e amizade.
+    </p>
+    <p>
+      <strong>Instagram da Mylenna:</strong> @mylennaoficiall
+    </p>
+  </section>
 
-<!-- COLAB -->
-<section id="colab">
-  <h2>dança & colaborações</h2>
-  <p>
-    nevelly cria conteúdos de dança junto com sua amiga
-    <strong>mylenna oliveira</strong>.
-  </p>
-  <p>
-    instagram da mylenna: <strong>@mylennaoficiall</strong>
-  </p>
-</section>
+  <!-- REDES -->
+  <section id="redes">
+    <h2>Redes Sociais</h2>
+    <p><strong>Instagram oficial:</strong> @nevellyoficial</p>
+    <p><strong>Instagram reserva:</strong> @soynevelly</p>
+  </section>
 
-<!-- INSTAGRAM -->
-<section id="instagram">
-  <h2>instagram oficial</h2>
-  <p>
-    acompanhe a nevelly nas suas contas oficiais:
-  </p>
-  <p>
-    <strong>@nevellyoficial</strong><br>
-    <strong>@soynevelly</strong> (conta reserva)
-  </p>
-</section>
-
-<!-- FÃS -->
-<section id="fas">
-  <h2>fã-clubes</h2>
-  <p>
-    nevelly valoriza muito seus fã-clubes e todo o carinho
-    recebido de quem acompanha sua trajetória.
-  </p>
-</section>
-    Se você chegou até aqui siga a nossa rede social @mundodanevelly
+  <!-- RODAPÉ -->
+  <footer>
+    <p>© Mundo da Nevelly — Site oficial</p>
+  </footer>
 
 </body>
-    </html>
+      </html>
