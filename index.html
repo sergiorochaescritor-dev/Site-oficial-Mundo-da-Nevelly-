@@ -1,252 +1,212 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Mundo da Nevelly</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>NEVELLY</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Arial Rounded MT Bold", Arial, sans-serif;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Arial', sans-serif;
+}
 
-    body {
-      background: linear-gradient(180deg, #5b6cff, #8a4cff, #ff7ac8);
-      color: #333;
-      overflow-x: hidden;
-    }
+body{
+  background:#fdf1ff;
+  overflow-x:hidden;
+}
 
-    /* MENU */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(255,255,255,0.95);
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      padding: 12px;
-      z-index: 1000;
-    }
+/* ===== MENU ===== */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:linear-gradient(90deg,#7a1fa2,#ff4fd8);
+  padding:15px;
+  text-align:center;
+  z-index:1000;
+}
 
-    nav a {
-      background: linear-gradient(135deg, #6a4cff, #ff7ac8);
-      color: white;
-      padding: 10px 18px;
-      border-radius: 25px;
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: transform 0.3s;
-    }
+nav a{
+  color:white;
+  text-decoration:none;
+  margin:0 15px;
+  font-size:18px;
+  font-weight:bold;
+}
 
-    nav a:hover {
-      transform: scale(1.1);
-    }
+nav a:hover{
+  text-decoration:underline;
+}
 
-    /* ABERTURA */
-    .abertura {
-      height: 100vh;
-      background: linear-gradient(160deg, #7a3cff, #b45cff);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-      position: relative;
-      overflow: hidden;
-    }
+/* ===== ABERTURA ===== */
+.hero{
+  height:100vh;
+  background:radial-gradient(circle at top,#8e24aa,#ff5fd2);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  color:white;
+  text-align:center;
+  position:relative;
+}
 
-    .estrela {
-      width: 90px;
-      height: 90px;
-      border: 3px solid white;
-      clip-path: polygon(
-        50% 0%,
-        61% 35%,
-        98% 35%,
-        68% 57%,
-        79% 91%,
-        50% 70%,
-        21% 91%,
-        32% 57%,
-        2% 35%,
-        39% 35%
-      );
-      animation: girar 8s linear infinite;
-      margin-bottom: 18px;
-    }
+.hero h1{
+  font-size:3.5rem;
+  letter-spacing:4px;
+  animation:brilhar 2s infinite alternate;
+}
 
-    @keyframes girar {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
+.estrela{
+  width:120px;
+  height:120px;
+  border:4px solid white;
+  clip-path:polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  margin-bottom:20px;
+  animation:girar 10s linear infinite;
+}
 
-    .abertura h1 {
-      font-size: 2.2rem;
-      letter-spacing: 3px;
-    }
+/* ===== SEÇÕES ===== */
+section{
+  padding:80px 20px;
+  text-align:center;
+}
 
-    section {
-      padding: 90px 20px;
-      background: #fff;
-      text-align: center;
-    }
+.card{
+  background:white;
+  max-width:900px;
+  margin:30px auto;
+  padding:30px;
+  border-radius:25px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
 
-    section h2 {
-      color: #6a4cff;
-      margin-bottom: 20px;
-    }
+h2{
+  color:#8e24aa;
+  font-size:2.3rem;
+  margin-bottom:15px;
+}
 
-    .foto-nevelly {
-      width: 230px;
-      border-radius: 20px;
-      margin: 20px auto 8px;
-      display: block;
-    }
+p{
+  font-size:1.2rem;
+  color:#444;
+  line-height:1.6;
+}
 
-    .credito-foto {
-      font-size: 0.85rem;
-      color: #666;
-      margin-bottom: 15px;
-    }
+/* ===== FOTO ===== */
+.foto-nevelly{
+  width:260px;
+  border-radius:25px;
+  margin:20px 0;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
 
-    .credito-foto a {
-      color: #6a4cff;
-      text-decoration: none;
-      font-weight: bold;
-    }
+/* ===== RODAPÉ ===== */
+footer{
+  background:#ff4fd8;
+  color:white;
+  padding:25px;
+  text-align:center;
+  font-size:18px;
+}
 
-    .info-box {
-      max-width: 500px;
-      margin: 0 auto;
-      background: #f6f0ff;
-      padding: 20px;
-      border-radius: 20px;
-    }
+/* ===== ANIMAÇÕES ===== */
+@keyframes girar{
+  from{transform:rotate(0deg);}
+  to{transform:rotate(360deg);}
+}
 
-    /* PLAYLISTS */
-    .playlists {
-      background: linear-gradient(180deg, #f3ecff, #ffeaf6);
-    }
-
-    .playlist-box {
-      background: white;
-      border-radius: 20px;
-      padding: 20px;
-      margin: 15px auto;
-      max-width: 500px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-
-    /* COLAB */
-    .colab {
-      background: linear-gradient(180deg, #ffecf7, #f3e6ff);
-    }
-
-    footer {
-      background: #6a4cff;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-  </style>
+@keyframes brilhar{
+  from{opacity:0.7;}
+  to{opacity:1;}
+}
+</style>
 </head>
 
 <body>
 
-  <!-- MENU -->
-  <nav>
-    <a href="#inicio">Início</a>
-    <a href="#quem">Quem é Nevelly</a>
-    <a href="#playlists">Playlists</a>
-    <a href="#colab">Colaborações</a>
-  </nav>
+<nav>
+  <a href="#inicio">Início</a>
+  <a href="#quem">Quem é Nevelly</a>
+  <a href="#info">Informações</a>
+  <a href="#redes">Redes</a>
+</nav>
 
-  <!-- ABERTURA -->
-  <section class="abertura" id="inicio">
-    <div class="estrela"></div>
-    <h1>NEVELLY</h1>
-  </section>
+<!-- ABERTURA -->
+<div class="hero" id="inicio">
+  <div class="estrela"></div>
+  <h1>NEVELLY</h1>
+</div>
 
-  <!-- QUEM É NEVELLY -->
-  <section id="quem">
+<!-- QUEM É NEVELLY -->
+<section id="quem">
+  <div class="card">
     <h2>Quem é Nevelly</h2>
 
-    <img 
-      src="file_00000000a87c720e976206208d0c4a47.png" 
-      alt="Nevelly" 
-      class="foto-nevelly"
-    >
+    <img src="Quem é Nevelly/file_00000000a87c720e976206208d0c4a47.png"
+         alt="Foto da Nevelly"
+         class="foto-nevelly">
 
-    <p class="credito-foto">
-      Foto: <a href="https://mediatudo.com.br" target="_blank">MediaTudo</a>
+    <p><strong>Foto:</strong> NevellyOficial</p>
+
+    <p>
+      Nevelly nasceu em <strong>01 de março de 2010</strong>, mora em São Paulo
+      e é uma criadora que ama cores, criatividade e conexão com seus fãs.
     </p>
+  </div>
+</section>
 
-    <div class="info-box">
-      <p><strong>Nome artístico:</strong> Nevelly</p>
-      <p><strong>Data de nascimento:</strong> 01 de março de 2010</p>
-      <p><strong>Idade:</strong> 15 anos</p>
-      <p><strong>Cidade:</strong> São Paulo – SP</p>
-      <p><strong>Cores favoritas:</strong> Azul, Roxo e Rosa</p>
-      <p>
-        Nevelly é uma criadora de conteúdo infantil que ama
-        levar alegria, cores e diversão para crianças,
-        sempre com carinho e criatividade.
-      </p>
-    </div>
-  </section>
+<!-- INFORMAÇÕES -->
+<section id="info">
+  <div class="card">
+    <h2>Informações</h2>
 
-  <!-- PLAYLISTS -->
-  <section class="playlists" id="playlists">
-    <h2>Playlists do Site</h2>
+    <p><strong>Data de nascimento:</strong> 01/03/2010</p>
+    <p><strong>Família:</strong> possui três irmãs e um irmão (cinco irmãos ao todo).</p>
+    <p><strong>Fã-clubes:</strong> Nevelly valoriza e ama muito seus fã-clubes.</p>
+    <p><strong>Cores favoritas:</strong> Roxo e Rosa.</p>
+  </div>
 
-    <div class="playlist-box">
-      <h3>🎵 Músicas Infantis</h3>
-      <p>
-        Músicas animadas, educativas e cheias de alegria
-        para o público infantil.
-      </p>
-    </div>
-
-    <div class="playlist-box">
-      <h3>🎬 Vídeos Divertidos</h3>
-      <p>
-        Vídeos com brincadeiras, desafios leves
-        e momentos especiais.
-      </p>
-    </div>
-
-    <div class="playlist-box">
-      <h3>🌈 Conteúdos Especiais</h3>
-      <p>
-        Participações, bastidores e vídeos
-        feitos com carinho.
-      </p>
-    </div>
-  </section>
-
-  <!-- COLABORAÇÕES -->
-  <section class="colab" id="colab">
+  <div class="card">
     <h2>Colaborações</h2>
     <p>
       Nevelly realiza colaborações em vídeos com sua amiga
       <strong>Mylenna Oliveira</strong>.
     </p>
     <p>
-      Instagram:
-      <a href="https://instagram.com/mylennaoficiall" target="_blank">
-        @mylennaoficiall
-      </a>
+      Instagram da Mylenna:
+      <strong>@mylennaoficiall</strong>
     </p>
-  </section>
+  </div>
+</section>
 
-  <footer>
-    © Mundo da Nevelly • Site infantil oficial
-  </footer>
+<!-- REDES -->
+<section id="redes">
+  <div class="card">
+    <h2>Redes Sociais Oficiais</h2>
+
+    <p><strong>Instagram:</strong></p>
+    <p>@nevellyoficial</p>
+    <p>@soynevelly (conta reserva)</p>
+  </div>
+</section>
+
+<footer>
+  siga nossa página no Instagram @mundodanevelly
+</footer>
 
 </body>
-</html>
+  </html>
