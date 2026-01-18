@@ -1,194 +1,228 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <title>Mundo da Nevelly</title>
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: Arial, Helvetica, sans-serif;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body{
-    background: linear-gradient(135deg, #ff4fd8, #a855f7, #ff7ad9);
-    overflow-x:hidden;
+  background:#fff;
+  color:#000;
+  overflow-x:hidden;
 }
 
-/* ELEMENTOS */
-.star{
-    position:fixed;
-    width:8px;
-    height:8px;
-    background:white;
-    border-radius:50%;
-    animation: twinkle 2s infinite alternate;
-    opacity:0.8;
+/* LOGO */
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  justify-content:center;
 }
 
-@keyframes twinkle{
-    from{transform:scale(1);}
-    to{transform:scale(1.6);}
-}
-
-.float{
-    position:fixed;
-    font-size:22px;
-    animation: float 6s infinite alternate;
-}
-
-@keyframes float{
-    from{transform:translateY(0);}
-    to{transform:translateY(-25px);}
+.logo svg{
+  width:45px;
+  height:45px;
 }
 
 /* ABERTURA */
 .hero{
-    text-align:center;
-    padding:70px 20px;
-    color:white;
+  position:relative;
+  height:100vh;
+  background:linear-gradient(90deg,#f7c6d9,#fff,#e6c9ff);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  text-align:center;
+  overflow:hidden;
 }
 
 .hero h1{
-    font-size:44px;
+  font-size:38px;
+  animation: floatText 3s ease-in-out infinite alternate;
 }
 
 .hero p{
-    font-size:18px;
-    margin-top:10px;
+  margin-top:10px;
+  font-size:18px;
 }
 
-.hero img{
-    margin-top:30px;
-    width:260px;
-    border-radius:30px;
-    box-shadow:0 15px 40px rgba(0,0,0,0.4);
+@keyframes floatText{
+  from{transform:translateY(0);}
+  to{transform:translateY(-12px);}
 }
+
+/* ESTRELAS RABISCO */
+.star{
+  position:absolute;
+  border:2px solid #000;
+  width:18px;
+  height:18px;
+  transform:rotate(45deg);
+  opacity:0.6;
+}
+
+.star:before,
+.star:after{
+  content:"";
+  position:absolute;
+  width:18px;
+  height:18px;
+  border:2px solid #000;
+}
+
+.star:before{ transform:rotate(45deg); }
+.star:after{ transform:rotate(-45deg); }
 
 /* MENU */
 nav{
-    display:flex;
-    justify-content:center;
-    gap:12px;
-    flex-wrap:wrap;
-    margin-bottom:30px;
+  background:#000;
+  padding:15px;
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
 }
 
 nav a{
-    background:linear-gradient(135deg,#ff66d4,#a855f7);
-    padding:12px 18px;
-    border-radius:20px;
-    text-decoration:none;
-    color:white;
-    font-weight:bold;
+  text-decoration:none;
+  padding:8px 16px;
+  background:#f7c6d9;
+  color:#000;
+  border-radius:20px;
+  font-weight:bold;
 }
 
 /* SEÇÕES */
 section{
-    background:white;
-    margin:40px auto;
-    padding:30px;
-    max-width:900px;
-    border-radius:30px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+  max-width:1000px;
+  margin:50px auto;
+  padding:40px;
+  background:#fff;
+  border-radius:30px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.15);
 }
 
-h2{
-    color:#a855f7;
-    margin-bottom:15px;
+section h2{
+  color:#b07adf;
+  margin-bottom:20px;
 }
 
-p{
-    line-height:1.7;
-    margin-bottom:12px;
+section p{
+  line-height:1.8;
+  margin-bottom:10px;
+}
+
+/* FOTO */
+.foto{
+  width:260px;
+  border-radius:25px;
+  display:block;
+  margin:20px auto;
+  box-shadow:0 15px 30px rgba(0,0,0,0.3);
 }
 </style>
 </head>
 
 <body>
 
-<!-- ESTRELAS -->
-<div class="star" style="top:10%; left:20%;"></div>
-<div class="star" style="top:35%; left:70%;"></div>
-<div class="star" style="top:80%; left:40%;"></div>
-
-<!-- ELEMENTOS -->
-<div class="float" style="left:10%; top:60%;">✨</div>
-<div class="float" style="left:85%; top:30%;">💖</div>
-<div class="float" style="left:50%; top:85%;">⭐</div>
-
 <!-- ABERTURA -->
 <div class="hero">
-    <h1>Mundo da Nevelly</h1>
-    <p>Um espaço cheio de cor, brilho e personalidade</p>
+  <div class="logo">
+    <!-- LOGO ESTRELA -->
+    <svg viewBox="0 0 100 100" fill="none" stroke="black" stroke-width="4">
+      <polygon points="50,5 61,39 95,39 67,59 78,95 50,74 22,95 33,59 5,39 39,39"/>
+    </svg>
+    <strong>nevelly</strong>
+  </div>
 
-    <img src="imagens/quem-e-nevelly/file_00000000a87c720e976206208d0c4a47.png" alt="Foto da Nevelly">
+  <h1>bem-vindo(a) ao mundo da nevelly</h1>
+  <p>um espaço organizado, criativo e autêntico</p>
+
+  <div class="star" style="top:15%;left:10%;"></div>
+  <div class="star" style="top:30%;right:15%;"></div>
+  <div class="star" style="bottom:20%;left:25%;"></div>
 </div>
 
 <!-- MENU -->
 <nav>
-    <a href="#quem">Quem é Nevelly</a>
-    <a href="#familia">Família</a>
-    <a href="#colab">Dança & Colaborações</a>
-    <a href="#fas">Fã-clubes</a>
+  <a href="#quem">quem é nevelly</a>
+  <a href="#familia">família</a>
+  <a href="#cores">cores</a>
+  <a href="#colab">colaborações</a>
+  <a href="#instagram">instagram</a>
+  <a href="#fas">fã-clubes</a>
 </nav>
 
 <!-- QUEM É -->
 <section id="quem">
-    <h2>Quem é Nevelly</h2>
-    <p><strong>Nome artístico:</strong> Nevelly</p>
-    <p><strong>Data de nascimento:</strong> 01 de março de 2010</p>
-    <p><strong>Idade:</strong> 15 anos</p>
-    <p><strong>Cidade:</strong> São Paulo – SP</p>
-    <p><strong>Cores favoritas:</strong> Azul, rosa e roxo</p>
+  <h2>quem é nevelly</h2>
+  <img src="imagens/quem-e-nevelly/nevelly.png" class="foto" alt="Nevelly">
 
-    <p>
-        Nevelly é uma jovem criadora brasileira que se expressa por meio da
-        dança, da criatividade e da presença digital, sempre com autenticidade
-        e conexão verdadeira com o público.
-    </p>
+  <p><strong>nome artístico:</strong> nevelly oficial</p>
+  <p><strong>data de nascimento:</strong> 01/03/2010</p>
+  <p><strong>idade:</strong> 15 anos</p>
+  <p><strong>cidade:</strong> são paulo – sp</p>
 </section>
 
 <!-- FAMÍLIA -->
 <section id="familia">
-    <h2>Família</h2>
-    <p>
-        Nevelly é a filha do meio em uma família com cinco irmãos.
-        A família tem um papel essencial na sua formação, valores
-        e na pessoa que ela é hoje.
-    </p>
+  <h2>família</h2>
+  <p>
+    nevelly faz parte de uma família com cinco irmãos.
+    ela é a filha do meio e valoriza profundamente seus laços familiares.
+  </p>
 </section>
 
-<!-- COLABORAÇÕES -->
+<!-- CORES -->
+<section id="cores">
+  <h2>cores favoritas</h2>
+  <p>
+    azul, rosa e roxo fazem parte da identidade e do estilo da nevelly,
+    refletindo delicadeza, criatividade e presença.
+  </p>
+</section>
+
+<!-- COLAB -->
 <section id="colab">
-    <h2>Dança e Colaborações</h2>
-    <p>
-        Nevelly cria <strong>conteúdos de dança</strong> ao lado de sua amiga
-        <strong>Mylenna Oliveira</strong>.
-    </p>
-    <p>
-        Juntas, elas produzem vídeos cheios de ritmo, sintonia e expressão,
-        mostrando a força da amizade através da dança.
-    </p>
-    <p>
-        <strong>Instagram da Mylenna:</strong> @mylennaoficiall
-    </p>
+  <h2>dança & colaborações</h2>
+  <p>
+    nevelly cria conteúdos de dança junto com sua amiga
+    <strong>mylenna oliveira</strong>.
+  </p>
+  <p>
+    instagram da mylenna: <strong>@mylennaoficiall</strong>
+  </p>
+</section>
+
+<!-- INSTAGRAM -->
+<section id="instagram">
+  <h2>instagram oficial</h2>
+  <p>
+    acompanhe a nevelly nas suas contas oficiais:
+  </p>
+  <p>
+    <strong>@nevellyoficial</strong><br>
+    <strong>@soynevelly</strong> (conta reserva)
+  </p>
 </section>
 
 <!-- FÃS -->
 <section id="fas">
-    <h2>Relação com os Fãs</h2>
-    <p>
-        Nevelly valoriza profundamente seus fã-clubes e cada pessoa
-        que acompanha sua trajetória.
-    </p>
-    <p>
-        Para ela, os fãs fazem parte da sua história e caminham
-        juntos em cada etapa.
-    </p>
+  <h2>fã-clubes</h2>
+  <p>
+    nevelly valoriza muito seus fã-clubes e todo o carinho
+    recebido de quem acompanha sua trajetória.
+  </p>
 </section>
+    Se você chegou até aqui siga a nossa rede social @mundodanevelly
 
 </body>
-  </html>
+    </html>
