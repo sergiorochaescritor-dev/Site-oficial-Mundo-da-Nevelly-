@@ -10,13 +10,13 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:'Poppins', sans-serif;
+  font-family:Arial, sans-serif;
 }
 
 body{
-  background: linear-gradient(120deg, #ff6ec7, #9b5cff, #ff9de2);
-  background-size: 400% 400%;
-  animation: bgMove 12s ease infinite;
+  background:linear-gradient(120deg,#ff6ec7,#9b5cff,#7b5cff);
+  background-size:400% 400%;
+  animation:bgMove 12s ease infinite;
   overflow-x:hidden;
 }
 
@@ -33,10 +33,11 @@ body{
   height:6px;
   background:white;
   border-radius:50%;
-  animation: starFloat 6s infinite ease-in-out;
+  animation:floatStar 6s infinite ease-in-out;
+  opacity:0.8;
 }
 
-@keyframes starFloat{
+@keyframes floatStar{
   0%{transform:translateY(0)}
   50%{transform:translateY(-25px)}
   100%{transform:translateY(0)}
@@ -45,9 +46,9 @@ body{
 /* LETRAS FLUTUANTES */
 .float{
   position:fixed;
-  font-size:26px;
-  opacity:0.8;
-  animation: floatText 10s linear infinite;
+  font-size:22px;
+  animation:floatText 10s linear infinite;
+  opacity:0.7;
 }
 
 @keyframes floatText{
@@ -69,7 +70,7 @@ body{
 
 .hero h1{
   font-size:48px;
-  animation: pulse 2s infinite;
+  animation:pulse 2s infinite;
 }
 
 @keyframes pulse{
@@ -107,11 +108,6 @@ nav a{
   background:linear-gradient(45deg,#ff77c6,#9b5cff);
   color:white;
   font-weight:bold;
-  transition:0.3s;
-}
-
-nav a:hover{
-  transform:scale(1.1);
 }
 
 /* SEÇÕES */
@@ -122,12 +118,6 @@ section{
   max-width:900px;
   border-radius:30px;
   box-shadow:0 10px 25px rgba(0,0,0,0.2);
-  animation: fadeUp 1.2s ease;
-}
-
-@keyframes fadeUp{
-  from{opacity:0; transform:translateY(30px)}
-  to{opacity:1; transform:translateY(0)}
 }
 
 h2{
@@ -137,7 +127,7 @@ h2{
 
 p{
   line-height:1.7;
-  margin-bottom:15px;
+  margin-bottom:12px;
 }
 </style>
 </head>
@@ -145,21 +135,21 @@ p{
 <body>
 
 <!-- ESTRELAS -->
-<div class="star" style="top:15%; left:20%;"></div>
-<div class="star" style="top:40%; left:70%;"></div>
-<div class="star" style="top:75%; left:35%;"></div>
+<div class="star" style="top:10%; left:20%;"></div>
+<div class="star" style="top:35%; left:70%;"></div>
+<div class="star" style="top:80%; left:40%;"></div>
 
 <!-- LETRAS -->
-<div class="float" style="left:10%;">✨</div>
-<div class="float" style="left:45%;">💖</div>
-<div class="float" style="left:80%;">⭐</div>
+<div class="float" style="left:15%;">✨</div>
+<div class="float" style="left:50%;">⭐</div>
+<div class="float" style="left:80%;">💖</div>
 
 <!-- ABERTURA -->
-<div class="hero" id="inicio">
-  <h1>🌟 Mundo da Nevelly 🌟</h1>
-  <p>Um espaço cheio de cor, brilho e personalidade, criado para reunir quem acompanha a trajetória da Nevelly.</p>
+<div class="hero">
+  <h1>Mundo da Nevelly</h1>
+  <p>Um espaço cheio de cor, brilho e personalidade.</p>
 
-  <img src="imagens/quem-e-nevelly/nevelly.jpg" alt="Nevelly">
+  <img src="imagens/quem-e-nevelly/file_00000000a87c720e976206208d0c4a47.png" alt="Nevelly">
   <span>Foto: NevellyOficial</span>
 </div>
 
@@ -167,6 +157,7 @@ p{
 <nav>
   <a href="#quem">Quem é Nevelly</a>
   <a href="#familia">Família</a>
+  <a href="#amiga">Amizade</a>
   <a href="#fas">Fã-clubes</a>
 </nav>
 
@@ -177,7 +168,7 @@ p{
   <p><strong>Data de nascimento:</strong> 01 de março de 2010</p>
   <p><strong>Idade:</strong> 15 anos</p>
   <p><strong>Cidade:</strong> São Paulo – SP</p>
-  <p><strong>Cores favoritas:</strong> Azul, rosa e roxo</p>
+  <p><strong>Cores favoritas:</strong> azul, rosa e roxo</p>
 
   <p>Nevelly é uma jovem criadora brasileira que constrói sua identidade com autenticidade, criatividade e carinho por quem a acompanha.</p>
 </section>
@@ -185,28 +176,28 @@ p{
 <!-- FAMÍLIA -->
 <section id="familia">
   <h2>Família</h2>
-  <p>Nevelly é a filha do meio em uma família com cinco irmãos, desenvolvendo empatia, união e criatividade desde cedo.</p>
+  <p>Nevelly é a filha do meio em uma família com cinco irmãos, crescendo em um ambiente de união, carinho e aprendizado.</p>
+</section>
+
+<!-- AMIGA -->
+<section id="amiga">
+  <h2>Amizade e Colaborações</h2>
+  <p>Nevelly mantém uma amizade especial com <strong>Mylenna Oliveira</strong>.</p>
+  <p>Juntas, realizam colaborações em vídeos de dança.</p>
+  <p><strong>Instagram da Mylenna:</strong> @mylennaoficiall</p>
 </section>
 
 <!-- FÃS -->
 <section id="fas">
   <h2>Relação com os Fãs</h2>
-  <p>O carinho e o respeito pelos fã-clubes fazem parte da base da trajetória da Nevelly.</p>
+  <p>Nevelly valoriza muito seus fã-clubes e todo o carinho que recebe.</p>
 
   <p><strong>Contas oficiais:</strong></p>
   <ul>
     <li>@nevellyoficial</li>
     <li>@soynevelly (conta reserva)</li>
   </ul>
-
-  <p>Qualquer outro perfil deve ser considerado não oficial.</p>
 </section>
 
-<script>
-document.querySelectorAll('.float').forEach(el=>{
-  el.style.animationDuration=(7+Math.random()*6)+'s';
-});
-</script>
-
 </body>
-</html>
+  </html>
